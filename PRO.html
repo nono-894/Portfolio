@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Réalisations Professionnelles - Noëlia Le Galliard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
+        }
+        header {
+            background-color: #311104;
+            color: white;
+            padding: 30px;
+            font-size: 32px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #7f442a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #704b3b;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .chart-container {
+            background-color: #e0e0e0;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        canvas {
+            max-width: 60%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Mes Réalisations Professionnelles
+        <a href="ACCUEIL.html" class="back-button">Retour à l'Accueil</a>
+    </header>
+    <div class="container">
+        <h2>Suivi de la Traçabilité de la Température</h2>
+        <p>
+            En tant qu'ingénieur méthode outils transport, j'ai mis en place un système de suivi des KPI liés à la traçabilité 
+            de la température durant le transport alimentaire. Ce projet a permis d'assurer une meilleure conformité réglementaire 
+            et d'optimiser la sécurité des produits transportés.
+        </p>
+        <img src="IMG_SITE1.jpg" alt="Présentation aux responsables transports" width="60%">
+        <p>
+            J'ai également réalisé une présentation aux responsables transports concernant le recensement des téléphones et des équipes. 
+            Cette initiative a permis d'améliorer la gestion des équipements et d'assurer une communication fluide entre les différentes équipes logistiques.
+        </p>
+        <div class="chart-container">
+            <h2>Répartition des Montants par Genre</h2>
+            <canvas id="temperatureChart"></canvas>
+        </div>
+        <p><a href="/mnt/data/Tableau croisé dynamique.xlsx" download>Télécharger le fichier Excel</a></p>
+    </div>
+    <script>
+        const ctx = document.getElementById('temperatureChart').getContext('2d');
+        const temperatureChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Action', 'Comédie', 'Comédie dramatique'],
+                datasets: [{
+                    label: 'Répartition en %',
+                    data: [412, 559, 1877],
+                    backgroundColor: ['#FF5733', '#33FF57', '#3357FF']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
